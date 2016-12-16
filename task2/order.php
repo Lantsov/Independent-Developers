@@ -12,6 +12,7 @@ else
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Задание 2</title>
+	<link href="https://fonts.googleapis.com/css?family=PT+Sans+Narrow|PT+Sans:400,700&amp;subset=cyrillic,latin-ext" rel="stylesheet"> 
 	<link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -118,8 +119,8 @@ else
 			</div>
 			<div class="full_desc">
 				<div class="full_desc_l">
-					<strong>Преимущества наушников Beats PowerBeats 2 Wireless:</strong>
-					<ul>
+					<strong class="fdl_perf">Преимущества наушников Beats PowerBeats 2 Wireless:</strong>
+					<ul class="fdl_perf_list">
 						<li>Разработаны при участии баскетболиста NBA Леброна Джеймса.</li>
 						<li>Фирменное звучание Beats с насыщенными басами.</li>
 						<li>Беспроводное подключение к любым аудио устройствам по средствам Bluetooth.</li>
@@ -128,19 +129,136 @@ else
 						<li>Раздельные динамики для средних и низких частот для качественного звучания.</li>
 						<li>Встроенный микрофон.</li>
 					</ul>
+					<strong class="full_othertext">Созданы специально для занятий спортом</strong>
+					Наушники PowerBeats 2 подходят для занятия практическим любым видом спорта, включая экстремальные. Регулируемые гибкие душки надежно держат наушники – они не свалится при прыжках, во время бега или от резкого поворота головы.
+					<strong class="full_othertext">Эксклюзивные технологии Beats для непревзойденного звучания</strong>
+					Благодаря технологиям Beats достигается ясный и объемный звук, плотный бас, плавная передача вокала и четкие высокие частоты.
 				</div>
 				<div class="full_desc_r">
-					
+					<strong class="full_othertext">Наслаждайтесь музыкой и следите за тем, что происходит вокруг</strong>
+					В наушниках PowerBeats 2 вы можете работать, стрелять, бегать в парке или нестись на велосипеде максимально безопасно. Конструкция динамиков позволяет слышать все, что происходит вокруг.
+					<strong class="full_othertext">Beats PowerBeats работают в любых условиях</strong>
+					Прочность и долговечность наушников проверена в самых экстремальных ситуациях. Защита от ультрафиолета позволяет использовать их в самую жаркую погоду.
+					<strong class="full_othertext">Без проводов и без потерь</strong>
+					Благодаря фирменной технологии Beats и последним разработкам в области технологии BlueTooth, наушники PowerBeats 2 Wireless позволяют передавать звук «по воздуху» без потери качества во всем диапазоне.
+					<strong class="full_othertext">Встроенный микрофон</strong>
+					PowerBeats 2 можно использовать в качестве гарнитуры для телефона. Функция ControlTalk позволяет совершать звонки с помощью встроенного микрофона.
 				</div>
 			</div>
+		</div>
+		<div class="comments">
+			<h2>Отзывы</h2>
+			<div class="comment" id="comment_0">
+				<span class="user">Анатолий, 19.12.2015</span> <span class="rating r_5">Оценка 5</span>
+				<p>Не ожидал что качество будет настолько хорошей для реплики! Спасибо за оперативную доставку! Мои рекомендации!</p>
+			</div>
+			<div class="comment" id="comment_1">
+				<span class="user">Мария Сысоева, 1.11.2015</span> <span class="rating r_5">Оценка 5</span>
+				<p><br>Очень стильные и качественные!!звук отменный!!Спасибо за оперативную доставку!</p>
+			</div>
+		</div>
+		<div class="add_comment">
+			<h2>Добавить отзыв</h2>
+			<form action="addcomment.php">
+				<input type="text" class="add_comment_name" placeholder="Ваше имя" name="comment_name">
+				<div class="rating_line">
+					Ваша оценка:
+					<input type="radio" class="rg" id="r0_1" name="add_comment_rating">
+					<label for="r0_1"><div class="rating_0 r_1">&nbsp;</div></label> |
+					<input type="radio" class="rg" id="r0_2" name="add_comment_rating">
+					<label for="r0_2"><div class="rating_0 r_2">&nbsp;</div></label> |
+					<input type="radio" class="rg" id="r0_3" name="add_comment_rating">
+					<label for="r0_3"><div class="rating_0 r_3">&nbsp;</div></label> |
+					<input type="radio" class="rg" id="r0_4" name="add_comment_rating">
+					<label for="r0_4"><div class="rating_0 r_4">&nbsp;</div></label> |
+					<input type="radio" class="rg" id="r0_5" name="add_comment_rating">
+					<label for="r0_5"><div class="rating_0 r_5">&nbsp;</div></label>
+				</div>
+				<textarea name="comment_text" class="add_comment_text" placeholder="Ваш отзыв" rows="4"></textarea>
+				<button type="submit" class="btn_yellow">Добавить отзыв</button>
+			</form>
+		</div>
+		<div class="order" id="buy">
+			<h2>Тестовая форма</h2>
+			<form action="new_order_pickup.php">
+				<table class="order_tbl">
+					<tr>
+						<td><label for="order_name">ФИО</label></td>
+						<td>
+							<input type="text" id="order_name" placeholder="Введите ФИО" class="order_input">
+							<span class="help_1">Да, нужно ввести ФИО</span>
+						</td>
+					</tr>
+					<tr>
+						<td><label for="order_phone">Телефон</label></td>
+						<td>
+							<input type="text" id="order_phone" placeholder="+7 903 999 99 99" class="order_input">
+							<span class="help_2">А сюда нужно ввести телефон</span>
+						</td>
+					</tr>
+					<tr>
+						<td><label for="order_email">Ваш e-mail<i class="req">*</i></label></td>
+						<td>
+							<input type="e-mail" id="order_email" placeholder="test@example.ru" class="order_input" required="required">
+							<span class="help_3">Внимание! Введя электронную почту, к которой у Вас нет доступа вы не сможете подтвердить заказ.</span>
+						</td>
+					</tr>
+					<tr>
+						<td><label for="order_other">Укажите дополнительную информацию<i class="req">*</i></label></td>
+						<td>
+							<textarea name="order_other" id="order_other" rows="3" class="order_input" placeholder="Введите сюда, то, с чем вы считаете нам необходимо ознакомиться"></textarea>
+						</td>
+					</tr>
+					<tr>
+						<td> </td>
+						<td>
+							<textarea name="order_trash_1" id="order_trash_1" rows="3" class="order_input" placeholder="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facilis dolorem delectus ad officia odio aperiam qui. Temporibus magni quisquam molestias dolore tempora dolores delectus laudantium modi excepturi nisi numquam nemo, id dolorem dicta hic consequatur aliquam tempore nam, necessitatibus illum est sit? Ex odit quo reprehenderit minima vero officia. Accusantium iusto asperiores excepturi aspernatur voluptates itaque, cupiditate fugit accusamus architecto possimus, corporis. Quam minima eius enim quo facere. Rem, laborum!"></textarea>
+							<span class="help_3">But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness. No one rejects, dislikes, or avoids pleasure itself, because it is pleasure, but because those who do not know how to pursue pleasure rationally encounter consequences that are extremely painful. Nor again is there anyone who loves or pursues or desires to obtain pain of itself, because it is pain, but because occasionally circumstances occur in which toil and pain can procure him some great pleasure. To take a trivial example, which of us ever undertakes laborious physical exercise, except to obtain some advantage from it? But who has any right to find fault with a man who chooses to enjoy a pleasure that has no annoying consequences, or one who avoids a pain that produces no resultant pleasure?</span>
+						</td>
+					</tr>
+					<tr>
+						<td>Quo vadis?</td>
+						<td class="trash_2">
+							<input type="radio" class="radio_control" id="rc_0" name="order_trash_2" value="Veni" checked="checked">
+							<label for="rc_0"><div class="rcview"> </div> Veni</label>
+							<input type="radio" class="radio_control" id="rc_1" name="order_trash_2" value="Vidi">
+							<label for="rc_1"><div class="rcview"> </div> Vidi</label>
+							<input type="radio" class="radio_control" id="rc_2" name="order_trash_2" value="Vici">
+							<label for="rc_2"><div class="rcview"> </div> Vici</label>
+							<input type="radio" class="radio_control" id="rc_3" name="order_trash_2" value="Errare Humanum est">
+							<label for="rc_3"><div class="rcview"> </div> Errare Humanum est</label>
+							<div class="tab">
+								<input type="checkbox" class="checkbox_control" id="cc_0" name="order_trash_3" checked="checked">
+								<label for="cc_0"><div class="ccview"> </div> Temporibus autem quibusdam et aut officiis debitis aut rerum<i class="req">*</i></label>
+							</div>
+						</td>
+					</tr>
+				</table>
+				<h2>Выбор доставки</h2>
+				<a href="?delivery=courier#buy" class="deliv"><div class="rcview"> </div> Курьером</a>
+				<a href="?delivery=pickup#buy" class="deliv"><div class="rcview active"> </div> Самовывоз</a>
+				<h2>Самовывоз заказа</h2>
+				<table class="order_tbl">
+					<tr>
+						<td> </td>
+						<td>
+							<select name="order_point" id="order_point" class="order_input">
+								<option value="NULL" selected="selected" disabled>Выберите пункт самовывоза</option>
+								<option value="pickup_point_0">м. Невский проспект</option>
+								<option value="pickup_point_1">м. Пушкинская</option>
+								<option value="pickup_point_2">м. Московская</option>
+								<option value="pickup_point_3">м. Купчино</option>
+							</select>
+						</td>
+					</tr>
+					<tr>
+						<td> </td>
+						<td>
+							<textarea name="order_trash_3" id="order_trash_3" rows="3" class="order_input" placeholder="Вы удивлены почему часть анкеты написана на латыни?"></textarea>
+						</td>
+					</tr>
 
-
-
-
-
-
-
-
+			</form>
 		</div>
 	</main>
 </body>

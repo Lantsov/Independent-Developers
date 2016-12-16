@@ -7,7 +7,7 @@ body{
 	width: 100%;
 	padding: 0;
 	margin: 0;
-	font-family: sans-serif;
+	font-family: 'PT Sans', sans-serif;
 }
 header{
 	width: 100%;
@@ -40,9 +40,11 @@ header{
 }
 .s_name{
 	display: block;
+	font-family: 'PT Sans Narrow', sans-serif;
 }
 .s_desc{
 	display: block;
+	font-family: 'PT Sans Narrow', sans-serif;
 }
 .contacts{
 	display: inline-block;
@@ -199,7 +201,212 @@ span.data{
 	margin: 15px 0;
 }
 .full_desc_l,
-.Full_desc_r{
+.full_desc_r{
 	width: 44%;
 	margin-right: 5%;
+	display: inline-block;
+	vertical-align: top;
+}
+.fdl_perf{
+	padding: 20px 0;
+	display: block;
+}
+.fdl_perf_list{
+	margin-left: 30px;
+	list-style: disc;
+}
+.full_othertext{
+	margin-top: 20px;
+	display: block;
+}
+.full_othertext:first{
+	margin: 0;
+}
+.comment{
+	padding: 19px 0;
+}
+.rating{
+	margin-left: 15px;
+	height: 15px;
+	min-width: 16px;
+	max-width: 76px;
+	background-image: url(../img/stars.png);
+	background-position: 0 0;
+	display: inline-block;
+	color: transparent;
+	line-height: 1;
+}
+.rating_0{
+	height: 15px;
+	min-width: 16px;
+	max-width: 76px;
+	background-image: url(../img/stars.png);
+	background-position: 0 15px;
+	display: inline-block;
+	color: transparent;
+	line-height: 1;
+}
+.rating_0:hover{
+	background-position: 0 0;
+}
+.r_1{
+	width: 16px;
+}
+.r_2{
+	width: 31px;
+}
+.r_3{
+	width: 46px;
+}
+.r_4{
+	width: 61px;
+}
+.r_5{
+	width: 76px;
+}
+.add_comment_name{
+	width: 255px;
+	border: 1px solid #a5a5a5;
+	padding: 6px 3px;
+	margin: 24px 0 20px;
+	font-size: 14px;
+}
+.rg{
+	display: none;
+}
+label{
+	cursor: pointer;
+	position: relative;
+}
+.rg:checked + label>div.rating_0{
+	background-position: 0 0;
+}
+.add_comment_text{
+	width: 987px;
+	border: 1px solid #afafaf;
+	padding: 6px 3px;
+	font-family: inherit;
+	margin: 24px 0 20px;
+	min-width: 400px;
+	min-height: 40px;
+	border-radius: 1px;
+}
+.add_comment_text:focus::-webkit-input-placeholder {color: transparent}
+.add_comment_text:focus::-moz-placeholder          {color: transparent}
+.add_comment_text:focus:-moz-placeholder           {color: transparent}
+.add_comment_text:focus:-ms-input-placeholder      {color: transparent}
+.btn_yellow{
+	padding: 12px 20px;
+	border: 1px solid #f4a421;
+	background-color: #fed430;
+	border-radius: 3px;
+	display: block;
+	font-weight: 700;
+	cursor: pointer;
+}
+.order{
+	padding: 92px 200px 30px 58px;
+}
+.order_tbl{
+	width: 100%;
+	border-spacing: 0 63px;
+}
+.order_tbl tr{
+	vertical-align: top;
+}
+.order_tbl tr td:first-child{
+	/*width: 16%;*/
+	display: inline-block;
+}
+.order_tbl tr td:last-child{
+	width: 83%;
+}
+.order_tbl tr td label{
+	padding-top: 17px;
+	display: block;
+}
+.order_input{
+	width: 100%;
+	padding: 17px 15px;
+	border-radius: 3px;
+	border: 1px solid #cccccc;
+	font-size: 16px;
+	font-family: inherit;
+}
+.help_1{
+	color: #808080;
+	padding-left: 30px;
+}
+.help_2{
+	color: #d3d3d3;
+	padding-left: 30px;
+}
+.help_3{
+	color: #6f6f6f;
+	padding-left: 30px;
+	display: block;
+}
+i.req{
+	color: #fc0d1b;
+	font-size: 18px;
+	font-family: sans-serif;
+	font-weight: 700;
+}
+.radio_control{
+	display: none;
+}
+.rcview{
+	width: 18px;
+	height: 18px;
+	background-image: url(../img/controls.png);
+	background-position: -18px 0;
+	display: inline-block;
+	position: absolute;
+	top: 2px;
+	left: -5px;
+}
+.radio_control:checked + label>div.rcview{
+	background-position: 0 0;
+}
+.rcview.active{
+	width: 18px;
+	height: 18px;
+	background-image: url(../img/controls.png);
+	background-position: 0 0;
+	display: inline-block;
+	position: absolute;
+	top: 2px;
+	left: -5px;
+}
+.trash_2 label{
+	padding-top: 0 !important;
+	padding-left: 20px;
+}
+.tab{
+	padding: 36px 8px 0;
+	position: relative;
+}
+.checkbox_control{
+	display: none;
+}
+.ccview{
+	width: 18px;
+	height: 18px;
+	background-image: url(../img/controls.png);
+	background-position: -18px 0;
+	display: inline-block;
+	position: absolute;
+	top: 2px;
+	left: -5px;
+}
+.checkbox_control:checked + label>div.ccview{
+	background-position: 18px 0;
+}
+.deliv{
+	position: relative;
+	display: block;
+	padding-left: 24px;
+	margin: 43px 0 16px 4px;
+	text-decoration: none;
+	color: inherit;
 }
