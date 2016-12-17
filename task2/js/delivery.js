@@ -1,9 +1,29 @@
+$(function(){
+	$('#dc').click(function(){
+		$.ajax({
+			type: "POST",
+			url: 'courier.php',
+			success: function(data) {
+				$('#result').html(data);
+			}
+		});
+	});
+});
+$(function(){
+	$('#dp').click(function(){
+		$.ajax({
+			type: "POST",
+			url: 'pickup.php',
+			success: function(data) {
+				$('#result').html(data);
+			}
+		});
+	});
+});
 function delivery($type) {
 	if ($type == 'courier') {
-		document.getElementById('form-courier').classList.remove('hidden');
-		document.getElementById('form-pickup').classList.add('hidden');
+		$('#form-pickup').remove()
 	} else {
-		document.getElementById('form-courier').classList.add('hidden');
-		document.getElementById('form-pickup').classList.remove('hidden');
+		$('#form-courier').remove()
 	}
-}
+};
