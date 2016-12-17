@@ -235,31 +235,96 @@ else
 					</tr>
 				</table>
 				<h2>Выбор доставки</h2>
-				<a href="?delivery=courier#buy" class="deliv"><div class="rcview"> </div> Курьером</a>
-				<a href="?delivery=pickup#buy" class="deliv"><div class="rcview active"> </div> Самовывоз</a>
-				<h2>Самовывоз заказа</h2>
-				<table class="order_tbl">
-					<tr>
-						<td> </td>
-						<td>
-							<select name="order_point" id="order_point" class="order_input">
-								<option value="NULL" selected="selected" disabled>Выберите пункт самовывоза</option>
-								<option value="pickup_point_0">м. Невский проспект</option>
-								<option value="pickup_point_1">м. Пушкинская</option>
-								<option value="pickup_point_2">м. Московская</option>
-								<option value="pickup_point_3">м. Купчино</option>
-							</select>
-						</td>
-					</tr>
-					<tr>
-						<td> </td>
-						<td>
-							<textarea name="order_trash_3" id="order_trash_3" rows="3" class="order_input" placeholder="Вы удивлены почему часть анкеты написана на латыни?"></textarea>
-						</td>
-					</tr>
-
+				<div class="del-select">
+					<input type="radio" class="radio_control" id="del-courier" name="order_delivery" value="courier">
+					<label for="del-courier" onclick="delivery('courier');"><div class="rcview"> </div> Курьером</label>
+					<input type="radio" class="radio_control" id="del-pickup" name="order_delivery" value="pickup" checked="checked">
+					<label for="del-pickup" onclick="delivery('pickup');"><div class="rcview"> </div> Самовывоз</label>
+				</div>
+				<div id="form-pickup" class="">
+					<h2>Самовывоз заказа</h2>
+					<table class="order_tbl">
+						<tr>
+							<td> </td>
+							<td>
+								<select name="order_point" id="order_point" class="order_input">
+									<option value="NULL" selected="selected" disabled>Выберите пункт самовывоза</option>
+									<option value="pickup_point_0">м. Невский проспект</option>
+									<option value="pickup_point_1">м. Пушкинская</option>
+									<option value="pickup_point_2">м. Московская</option>
+									<option value="pickup_point_3">м. Купчино</option>
+								</select>
+							</td>
+						</tr>
+						<tr>
+							<td> </td>
+							<td>
+								<textarea name="order_trash_3" id="order_trash_3" rows="3" class="order_input" placeholder="Вы удивлены почему часть анкеты написана на латыни?"></textarea>
+							</td>
+						</tr>
+					</table>
+				</div>
+				<div id="form-courier" class="hidden">
+					<h2>Доставка курьером</h2>
+					<table class="order_tbl">
+						<tr>
+							<td> </td>
+							<td>
+								<input type="text" name="order_place_street" placeholder="Улица" class="order_input">
+							</td>
+						</tr>
+						<tr>
+							<td> </td>
+							<td>
+								<input type="text" name="order_place_house" placeholder="Дом" class="order_input">
+							</td>
+						</tr>
+						<tr>
+							<td> </td>
+							<td>
+								<input type="text" name="order_place_door" placeholder="Подъезд" class="order_input">
+							</td>
+						</tr>
+						<tr>
+							<td> </td>
+							<td>
+								<input type="text" name="order_place_locker" placeholder="Домофон" class="order_input">
+							</td>
+						</tr>
+						<tr>
+							<td> </td>
+							<td>
+								<input type="text" name="order_place_floor" placeholder="Этаж" class="order_input">
+							</td>
+						</tr>
+						<tr>
+							<td> </td>
+							<td>
+								<input type="text" name="order_place_apart" placeholder="Квартира" class="order_input">
+							</td>
+						</tr>
+						<tr>
+							<td> </td>
+							<td>
+								<input type="text" name="order_place_build" placeholder="Корпус или строение" class="order_input">
+								<span class="help_1">(если есть)</span>
+							</td>
+						</tr>
+						<tr>
+							<td> </td>
+							<td>
+								<textarea name="order_trash_3" id="order_trash_3" rows="3" class="order_input" placeholder="Вы удивлены почему часть анкеты написана на латыни?"></textarea>
+							</td>
+						</tr>
+					</table>
+				</div>
+				<button class="pull-right btn_round">Вперед →</button>
 			</form>
 		</div>
 	</main>
+	<script type="text/javascript" src="js/delivery.js"></script>
+	<script>
+		delivery('pickup');
+	</script>
 </body>
 </html>
