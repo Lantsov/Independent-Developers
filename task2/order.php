@@ -1,4 +1,6 @@
 <?php
+include_once 'connect.php';
+
 $colors = array('черно-красный','silver','red-black');
 if (isset($_GET['color']))
 	{$activeColor = $_GET['color'];}
@@ -16,6 +18,11 @@ else
 	<link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+	<div class="over <?php if (!$_GET['ok']) {echo 'hidden';}; ?>">
+		<div class="info">
+			Данные внесены в БД
+		</div>
+	</div>
 	<header>
 		<div class="top_nav">
 			<div class="sitename">
@@ -27,23 +34,44 @@ else
 			<div class="contacts">
 				<img src="img/phone.png" alt="" class="img_tel">
 				<a href="tel:+79999999999" class="cont_tel">+7(999) 999-99-99</a>
-				Ждем Вашего звонка с 10:00 до 23:00
+				<span>Ждем Вашего звонка с 10:00 до 23:00</span>
 			</div>
 		</div>
 		<div class="bottom_nav">
 			<div class="nav_align">
 				<ul class="nav_main">
-					<li><a href="#">Блютуз наушники</a></li>
-					<li><a href="#">Микронаушники</a></li>
-					<li><a href="#">Блютуз колонки</a></li>
-					<li><a href="#">Аксессуары</a></li>
-				</ul>
-				<ul class="nav_main">	
-					<li><a href="#">Доставка и Оплата</a></li>
-					<li><a href="#">Гарантия</a></li>
-					<li><a href="#">О нас</a></li>
-					<li><a href="#">Контакты</a></li>
-				</ul>
+					<?php
+					try {
+						$dbh = new PDO('mysql:host=localhost;dbname=task2;charset=utf8', $db_user, $db_pass);
+						foreach($dbh->query("select id, url, text, parent from menu") as $row) {
+							$menu[] = $row;
+						}
+						$dbh = null;
+					} catch (PDOException $e) {
+						print "Error!: " . $e->getMessage() . "<br/>";
+						die();
+					};
+					foreach ($menu as $key => $value) {
+						if ($value['parent'] == '0') {
+							echo '<li><a href=".'.$value['url'].'">'.$value['text'].'</a><ul class="submenu">';
+							foreach ($menu as $subkey => $subvalue) {
+								if ($subvalue['parent'] == $value['id']) {
+									echo '<li><a href=".'.$subvalue['url'].'">'.$subvalue['text'].'</a><ul class="sm_lvl_3">';
+									foreach ($menu as $dsubkey => $dsubvalue) {
+										if ($dsubvalue['parent'] == $subvalue['id']) {
+											echo '<li><a href=".'.$dsubvalue['url'].'">'.$dsubvalue['text'].'</a>';
+										}
+									}
+									echo "</ul></li>";
+								}
+							}
+							echo "</ul></li>";
+							if ($key == '3') {
+								echo '</ul><ul class="nav_main">';
+							}
+						}
+					}
+					?>
 			</div>
 		</div>
 		<div class="logo">
@@ -58,6 +86,10 @@ else
 				<div class="item_img_active">
 					<span>Powerbeats 2 Wireless</span>
 				</div>
+				<ul class="item_img_small">
+					<li><img src="img/1.jpg" alt=""></li>
+					<li><img src="img/2.jpg" alt=""></li>
+				</ul>
 			</div>
 			<div class="item_main">
 				<h1>Beats Powerbeats 2 Wireless (<?php echo $colors[$activeColor];?>)</h1>
@@ -180,26 +212,26 @@ else
 		</div>
 		<div class="order" id="buy">
 			<h2>Тестовая форма</h2>
-			<form action="new_order_pickup.php">
+			<form action="form.php" method="post">
 				<table class="order_tbl">
 					<tr>
 						<td><label for="order_name">ФИО</label></td>
 						<td>
-							<input type="text" id="order_name" placeholder="Введите ФИО" class="order_input">
+							<input type="text" id="order_name" placeholder="Введите ФИО" class="order_input" name="order_name">
 							<span class="help_1">Да, нужно ввести ФИО</span>
 						</td>
 					</tr>
 					<tr>
 						<td><label for="order_phone">Телефон</label></td>
 						<td>
-							<input type="text" id="order_phone" placeholder="+7 903 999 99 99" class="order_input">
+							<input type="text" id="order_phone" placeholder="+7 903 999 99 99" class="order_input" name="order_phone">
 							<span class="help_2">А сюда нужно ввести телефон</span>
 						</td>
 					</tr>
 					<tr>
 						<td><label for="order_email">Ваш e-mail<i class="req">*</i></label></td>
 						<td>
-							<input type="e-mail" id="order_email" placeholder="test@example.ru" class="order_input" required="required">
+							<input type="e-mail" id="order_email" placeholder="test@example.ru" class="order_input" required="required" name="order_email">
 							<span class="help_3">Внимание! Введя электронную почту, к которой у Вас нет доступа вы не сможете подтвердить заказ.</span>
 						</td>
 					</tr>

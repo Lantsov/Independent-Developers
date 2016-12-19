@@ -4,13 +4,13 @@
 						<tr>
 							<td> </td>
 							<td>
-								<input type="text" name="order_place_street" placeholder="Улица" class="order_input">
+								<input type="text" name="order_place_street" placeholder="Улица" class="order_input" required="required">
 							</td>
 						</tr>
 						<tr>
 							<td> </td>
 							<td>
-								<input type="text" name="order_place_house" placeholder="Дом" class="order_input">
+								<input type="text" name="order_place_house" placeholder="Дом" class="order_input" required="required">
 							</td>
 						</tr>
 						<tr>
